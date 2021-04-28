@@ -1,0 +1,27 @@
+.common {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.red {
+  composes: common;
+  background-color: red;
+}
+.green {
+  composes: common;
+  background-color: green;
+}
+.item{
+  display: flex;
+  align-items: center;
+  width: 200px;
+  justify-content: space-between;
+}
+
+.friend{
+  display: flex;
+align-items: center;
+flex-direction: column;
+}

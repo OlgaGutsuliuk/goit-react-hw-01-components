@@ -1,12 +1,14 @@
 import React from "react";
+import PropTypes from "prop-types";
 import StatisticsItems from "./statisticsItems/StatisticsItems";
+import style from './StatsStyles.module.css'
 
 const Statistics = ({ title, stats }) => {
   return (
-    <section className="statistics">
-      <h2 className="title">{title}</h2>
+    <section className={style.statistics}>
+      <h2 className={style.title}>{title}</h2>
 
-      <ul className="stat-list">
+      <ul className={style.list}>
         {stats.map(stat => (
           <StatisticsItems stat={stat} key={stat.id} />
         ))}
@@ -16,3 +18,15 @@ const Statistics = ({ title, stats }) => {
 };
 
 export default Statistics;
+
+Statistics.defaultProps = {
+  title: ''
+}
+
+Statistics.propTypes = {
+  stats: PropTypes.arrayOf(
+    PropTypes.object
+  ).isRequired,
+};
+
+
